@@ -1,0 +1,293 @@
+:root {
+  --color-orange: #E9641F;
+}
+
+
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: 'Roboto';
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #d7d7d7;
+}
+
+
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 80px;
+}
+
+/* ====================
+Menu Left 
+=======================*/
+.menu-left svg {
+  width: 150px;
+}
+
+/* ====================
+Menu Center 
+=======================*/
+.menu-center ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu-center ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 30px 29px;
+  font-weight: 400;
+}
+
+.menu-center ul li a:hover {
+  color: var(--color-orange)
+}
+
+/* ====================
+Menu Right 
+=======================*/
+.menu-right {
+  width: 150px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.img-profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 45%;
+  background-color: red;
+  margin-left: 15px;
+}
+
+.lupa {
+  cursor: pointer;
+}
+
+.menu-right svg {
+  width: 15px;
+}
+
+.input-form {
+  position: absolute;
+  top: 80px;
+  right: 60px;
+}
+
+.input-form input {
+  width: 350px;
+  padding: 10px;
+  animation: animationInput .4s ease-in;
+  display: none;
+}
+
+input.ativo {
+  display: block;
+  outline: 1px solid #333;
+}
+
+.search-info {
+  position: absolute;
+  top: -5px;
+  right: -25px;
+  padding: 15px 8px;
+  border: none;
+  background-color: #f2f2f2;
+  box-shadow: -3px 1px 10px gray;
+  display: none;
+}
+
+.search-info.ativo {
+  display: block;
+  animation: animationInput .2s ease-in;
+}
+
+@keyframes animationInput {
+  from {
+    opacity: 0;
+    transform: translate(-30);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+/* MAIN */
+.main {
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  align-items: flex-end;
+  display: none;
+}
+
+.main.ativo {
+  display: block;
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  align-items: flex-end;
+  animation: upContent .9s ease-in;
+}
+
+@keyframes upContent {
+  from {
+    opacity: 0;
+    transform: translate(-120);
+  }
+  from {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.container-info-movies {
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+  height: 400px;
+  border-radius: 17px;
+  display: none;
+}
+
+.container-info-movies.ativo {
+  display: block;
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+  height: 400px;
+  border-radius: 17px;
+  animation: mainAnimation .9s ease-in;
+}
+
+@keyframes mainAnimation {
+  from {
+    opacity: 0;
+    transform: translate(-160, -120, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.container-info-movies * {
+  margin: 5px;
+}
+
+.image-movie {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 100%;
+  border-radius: 17px;
+}
+
+
+.image-movie img {
+  width: 100%;
+  background-color: black;
+  border-radius: 17px;
+}
+
+.info-movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 10px 10px 0 10px;
+}
+
+.genre-info-movie {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.box-info-movie {
+  background: rgba(255, 255, 255, .2);
+  border-radius: 7px;
+}
+
+.box-info-movie p {
+  padding: 0px 10px;
+}
+
+.info-movie h1 {
+  color: white;
+  font-weight: normal;
+}
+
+.info-movie p {
+  max-width: 600px; 
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  line-height: 2rem;
+  font-size: 0.875em;
+}
+
+.hr {
+  border: 0.4px dotted tan;
+}
+
+/* SECTION */
+section {
+  margin-top: 50px;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+section h1 {
+  margin: 10px;
+  font-weight: 300;
+}
+
+/* Movies family */
+
+.movies-family {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+  width: 100%;
+  flex: 1;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.box img {
+  flex: 0.5;
+  border-radius: 10px;
+  margin: 10px;
+}
